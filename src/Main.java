@@ -51,12 +51,7 @@ public class Main {
                 LocalDate.of(2023,8,31),false));
 
 
-        Booking booking1 = new Booking(room1,guest1,null,LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),true);
-        Booking booking2 = new Booking(room3,guest1,otherGuests,LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),true);
 
-        List<Booking>bookingList = new ArrayList<>();
-        bookingList.add(booking1);
-        bookingList.add(booking2);
 
         System.out.println("Rooms available:");
 
@@ -65,8 +60,33 @@ public class Main {
         System.out.println(room2+"Kč");
         System.out.println(room3+"Kč");
 
-        bookingList.forEach(System.out::println);
-        
+        List<Booking> bookingList = bookingManager.getBookings();
+
+
+
+
+
+
+        for (Booking booking : bookingList) {
+            if (!booking.isBusinessStay()) System.out.println("Rekreační pobyt: "+ booking.getGuest()+ " od  "
+                    +booking.getStartOfStay()+ "  do  "+booking.getEndOfStay());
+
+        }
+
+
+
+        System.out.println("-----------------------------------------------");
+        System.out.println("Průměrný počet rezervací na jednoho hosta: "+(double)(bookingList.size() + otherGuests.size())/guestList.size());
+
+        System.out.println("-----------------------------------------------");
+        for (Booking booking : bookingList) {
+            System.out.println("Pobyt: " + booking.getGuest() + booking.getRoom() +
+                    " od  " + booking.getStartOfStay() + "  do  " + booking.getEndOfStay());
+
+
+        }
+
+
 
     }
 }
