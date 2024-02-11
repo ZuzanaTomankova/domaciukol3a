@@ -23,9 +23,9 @@ public class BookingManager {
         bookingList.clear();
     }
 
-    public void getNumberOfWorkingBookings(Booking booking){
-        bookingList.size();
-    }
+   // public int getNumberOfWorkingBookings(){       toto mi nechodí
+    //    bookingList.size();
+  //  }
 
     public void getAverageGuests(Booking booking){
 

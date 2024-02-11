@@ -85,8 +85,13 @@ public class Main {
 
 
         }
+        System.out.println("-----------------------");
+        System.out.println("Seznam rezervací: "+bookingManager.getBookings());
 
+        //System.out.println("-------------------------");
+       // System.out.println(bookingManager.getNumberOfWorkingBookings()); toto mi nechodí
 
+        System.out.println();
 
     }
 }
