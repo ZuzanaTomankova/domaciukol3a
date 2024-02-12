@@ -88,8 +88,8 @@ public class Booking {
         BigDecimal daysBetween = BigDecimal.valueOf(ChronoUnit.DAYS.between(startOfStay, endOfStay));
     }
 
-    public void getTotalPrice(BigDecimal price, BigDecimal daysBetween){
-        BigDecimal totalPrice = daysBetween.multiply(daysBetween);
+    public void getTotalPrice(BigDecimal pricePerNight, BigDecimal daysBetween){
+        BigDecimal totalPrice = pricePerNight.multiply(daysBetween);
     }
 
 
