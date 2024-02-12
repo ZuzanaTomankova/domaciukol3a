@@ -7,7 +7,7 @@ public class Room {
     private int numberOfBeds;
     private boolean balcony;
     private boolean seaView;
-    private BigDecimal pricePerNight;
+    public BigDecimal pricePerNight;
 
     public Room(int number, int numberOfBeds, boolean balcony, boolean seaView, BigDecimal pricePerNight) {
         this.number = number;
