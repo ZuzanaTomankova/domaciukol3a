@@ -8,20 +8,21 @@ public class Booking {
     private Room room;
     private Guest guest;
     private List<Guest> otherGuests;
+    private int numberOfGuests;
     private LocalDate startOfStay;
     private LocalDate endOfStay;
     private boolean businessStay;
 
-    public Booking(Room room, Guest guest, List<Guest> otherGuests, LocalDate startOfStay, LocalDate endOfStay, boolean businessStay) {
+    public Booking(Room room, Guest guest, List<Guest> otherGuests, int numberOfGuests, LocalDate startOfStay, LocalDate endOfStay, boolean businessStay) {
         this.room = room;
         this.guest = guest;
         this.otherGuests = otherGuests;
+        this.numberOfGuests = numberOfGuests;
         this.startOfStay = startOfStay;
         this.endOfStay = endOfStay;
         this.businessStay = businessStay;
     }
-
-    //region Přístupové metody
+//region Přístupové metody
 
     public Room getRoom() {
         return room;
@@ -72,10 +73,14 @@ public class Booking {
         this.businessStay = businessStay;
     }
 
+    public int getNumberOfGuests() {
+        return numberOfGuests;
+    }
 
-    //endregion
-
-
+    public void setNumberOfGuests(int numberOfGuests) {
+        this.numberOfGuests = numberOfGuests;
+    }
+//endregion
 
 
     @Override
@@ -84,6 +89,7 @@ public class Booking {
                 "room=" + room +
                 ", guest=" + guest +
                 ", otherGuests=" + otherGuests +
+                ", numberOfGuests=" + numberOfGuests +
                 ", startOfStay=" + startOfStay +
                 ", endOfStay=" + endOfStay +
                 ", businessStay=" + businessStay +

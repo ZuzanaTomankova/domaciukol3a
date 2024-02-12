@@ -1,4 +1,7 @@
+
 import com.engeto.ja.hotel.Booking;
+
+
 import com.engeto.ja.hotel.BookingManager;
 import com.engeto.ja.hotel.Guest;
 import com.engeto.ja.hotel.Room;
@@ -34,20 +37,20 @@ public class Main {
         Room room3 = new Room(3,3,false,true, BigDecimal.valueOf(2400));
 
         BookingManager bookingManager = new BookingManager();
-        bookingManager.addBooking(new Booking(room1,guest1,null, LocalDate.of(2021,7,19),
+        bookingManager.addBooking(new Booking(room1,guest1,null,1, LocalDate.of(2021,7,19),
                 LocalDate.of(2021,7,26), true));
-        bookingManager.addBooking(new Booking(room3,guest1,otherGuests,LocalDate.of(2021,7,19),
+        bookingManager.addBooking(new Booking(room3,guest1,otherGuests,2,LocalDate.of(2021,7,19),
                 LocalDate.of(2021,7,26),true));
-        bookingManager.addBooking(new Booking(room3,guest3,null,LocalDate.of(2021,9,1),
+        bookingManager.addBooking(new Booking(room3,guest3,null,1,LocalDate.of(2021,9,1),
                 LocalDate.of(2021,9,14),true));
-        bookingManager.addBooking(new Booking(room2,guest4,null,LocalDate.of(2023,7,18),
+        bookingManager.addBooking(new Booking(room2,guest4,null,1,LocalDate.of(2023,7,18),
                 LocalDate.of(2023,7,21),false));
 
         for (int i = 1; i <= 20; i = i+2) {
-            bookingManager.addBooking(new Booking(room2,guest5,null,LocalDate.of(2023,8,i),
+            bookingManager.addBooking(new Booking(room2,guest5,null,1,LocalDate.of(2023,8,i),
                     LocalDate.of(2023,8,i+1),false));}
 
-        bookingManager.addBooking(new Booking(room3,guest5,null,LocalDate.of(2023,8,1),
+        bookingManager.addBooking(new Booking(room3,guest5,null,1,LocalDate.of(2023,8,1),
                 LocalDate.of(2023,8,31),false));
 
 
@@ -69,7 +72,7 @@ public class Main {
 
         for (Booking booking : bookingList) {
             if (!booking.isBusinessStay()) System.out.println("Rekreační pobyt: "+ booking.getGuest()+ " od  "
-                    +booking.getStartOfStay()+ "  do  "+booking.getEndOfStay());
+                    +booking.getStartOfStay()+ "  do  "+booking.getEndOfStay()+" Počet hostů: "+booking.getNumberOfGuests());
 
         }
 
@@ -81,7 +84,7 @@ public class Main {
         System.out.println("-----------------------------------------------");
         for (Booking booking : bookingList) {
             System.out.println("Pobyt: " + booking.getGuest() + booking.getRoom() +
-                    " od  " + booking.getStartOfStay() + "  do  " + booking.getEndOfStay());
+                    " od  " + booking.getStartOfStay() + "  do  " + booking.getEndOfStay()+" Počet hostů: "+booking.getNumberOfGuests());
 
 
         }
@@ -90,6 +93,7 @@ public class Main {
 
         //System.out.println("-------------------------");
        // System.out.println(bookingManager.getNumberOfWorkingBookings()); toto mi nechodí
+
 
 
 
